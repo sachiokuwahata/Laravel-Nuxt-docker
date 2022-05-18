@@ -3,7 +3,6 @@ FROM php:7.3-fpm
 
 # Host(PC)のファイルをコンテナ内へCOPY
 COPY ./docker/php/php.ini /usr/local/etc/php/
-COPY ./server /work
 
 # Host(PC)のファイルをコンテナ内へCOPY
 RUN apt-get update && apt-get -y upgrade
