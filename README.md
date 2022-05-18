@@ -96,4 +96,46 @@ http://localhost/api/hello
 アクセスすると"helloGet"が表示されるかと思います。
 これで、文字列を返すAPI作成完了です。
 
+# feature/04
+
+## 04_01: NuxtからLaravelのAPIを呼び出す.
+
+axiosというライブラリを使っていきます。
+[02_03_03：Nuxtの導入内容を回答] で、指定して頂いたライブラリです。
+・Nuxt.js modules: Axios - Promise based HTTP client
+
+## 04_01_01: axiosの処理を作成
+
+下記ファイルを作成
+front/app/plugins/axios.js
+
+ファイルの中身はaxios.jsを参照
+
+## 04_01_02: nuxt.configへpluginsの反映
+
+```
+  plugins: [
+    'plugins/axios' // 追記
+  ],
+```
+
+## 04_01_03: nuxt.configへbaseURLの反映
+
+```
+  axios: {
+    baseURL: 'http://localhost:80' // 追記
+  },
+```
+
+## 04_02:　Nuxt画面へ表示
+
+pages/index.vue　に呼び出しボタンを追記
+index.vueを参照
+
+下記のように helloGetが渡ってきていたら成功です。
+<img src="https://user-images.githubusercontent.com/46374808/169037340-38c5bb3c-0861-48d8-b464-1a490b75a199.png
+">
+
+
+
 
