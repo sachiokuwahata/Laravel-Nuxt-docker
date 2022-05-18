@@ -1,19 +1,19 @@
-## feature/01
+# feature/01
 右記のコンテナ起動をするためのdockerfile/docker-compose
 php / nginx / mysql / nuxt 
 
-## feature/02
+# feature/02
 02_01:docker containerを起動
 02_02:LaravelをInstall
 02_03:NuxtをInstall
 02_04:localhostでアクセス出来ることを確認
 
-### 02_01:docker containerを起動
+## 02_01:docker containerを起動
 ルートディレクトリで
 ```
 docker-compose up -d
 ```
-### 02_02：LaravelのInstall
+## 02_02：LaravelのInstall
 #### 02_02_01：php コンテナへ
 ```
 docker-compose exec php bash
@@ -26,7 +26,7 @@ composer create-project laravel/laravel:^8.0 app
 ※ サービス名「app」にして下さい。（ nginxのルート設定で指定しているため ）
 ※ 8.0 Verで指定して下さい　( 他のバージョンで確認していません。 )
 
-### 02_03:NuxtをInstall
+## 02_03:NuxtをInstall
 
 #### 02_03_01：php コンテナへ
 ```
@@ -44,7 +44,7 @@ npm init nuxt-app app
 ・Nuxt.js modules: Axios - Promise based HTTP client
 ・Rendering mode: Single Page App
 
-### 02_04:localhostでアクセス出来ることを確認
+## 02_04:localhostでアクセス出来ることを確認
 
 #### 02_04_01：Laravelへアクセス
 ```
@@ -72,4 +72,28 @@ http://localhost:8080
 NUXTのHOME画面へ遷移できればInstall完了です。
 <img src="https://user-images.githubusercontent.com/46374808/169027843-3b341e2e-9b36-4942-974b-81f1c1e12779.png
 ">
+
+# feature/03
+LaravelとNuxtのAPI通信をします。
+
+## 03_01: Controller作成 / API処理
+
+```
+php artisan make:controller TestAPIContoller
+```
+処理内容はTestAPIContollerを参照
+
+## 03_02: Route設定
+
+api.php に設定していきます。
+api.phpを参照
+
+## 03_03: ブラウザで確認
+```
+http://localhost/api/hello
+```
+
+アクセスすると"helloGet"が表示されるかと思います。
+これで、文字列を返すAPI作成完了です。
+
 
